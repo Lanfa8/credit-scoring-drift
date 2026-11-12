@@ -43,10 +43,14 @@ def sample_population(pool: pd.DataFrame, t: float, rng: np.random.Generator) ->
 
 
 def apply_economic_shock(df: pd.DataFrame, t: float, rng: np.random.Generator) -> pd.DataFrame:
+    """Nominal values inflate; a growing share of customers can only pay half of what
+    they used to pay, while credit limits stay frozen."""
     df = df.copy()
-    inflation = (1 + 0.45 * t) * rng.lognormal(0, 0.03 * t, size=(len(df), 1))
+    inflation = (1 + 0.6 * t) * rng.lognormal(0, 0.03 * t, size=(len(df), 1))
+    squeezed = rng.random(len(df)) < 0.5 * t
+    pay_factor = inflation * np.where(squeezed, 0.5, 1.0)[:, None]
     df[config.BILL_AMT] = (df[config.BILL_AMT].to_numpy() * inflation).round()
-    df[config.PAY_AMT] = (df[config.PAY_AMT] * (1 - 0.3 * t)).round()
+    df[config.PAY_AMT] = (df[config.PAY_AMT].to_numpy() * pay_factor).round()
     return df
 
 
