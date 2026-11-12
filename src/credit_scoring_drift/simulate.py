@@ -89,8 +89,10 @@ def simulate(seed: int = config.SEED) -> list[dict]:
     for sc in SCENARIOS:
         batch = sample_population(pool, sc.intensity, rng)
         batch = apply_economic_shock(batch, sc.intensity, rng)
+        default_before = batch[config.TARGET].mean()
         if sc.concept_drift:
             batch = apply_concept_drift(batch, sc.intensity, rng)
+        injected = round(float(batch[config.TARGET].mean() - default_before), 4)
 
         if sc.period == "2025-03":
             bad_id = f"{sc.period}-upstream-bug"
@@ -106,7 +108,14 @@ def simulate(seed: int = config.SEED) -> list[dict]:
             )
 
         batch.to_csv(config.BATCHES_DIR / f"{sc.period}.csv", index=False)
-        manifest.append({"batch_id": sc.period, "file": f"{sc.period}.csv", **asdict(sc)})
+        manifest.append(
+            {
+                "batch_id": sc.period,
+                "file": f"{sc.period}.csv",
+                **asdict(sc),
+                "injected_concept_default": injected,
+            }
+        )
         log.info(
             "%s: intensity=%.2f concept=%s default_rate=%.3f",
             sc.period,
