@@ -21,3 +21,7 @@ validate:
 
 train:
 	$(PY) -m credit_scoring_drift.train
+
+.PHONY: simulate
+simulate:
+	$(PY) -m credit_scoring_drift.simulate
