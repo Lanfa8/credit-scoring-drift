@@ -27,7 +27,8 @@ PAY_AMT = [f"pay_amt_{i}" for i in range(1, 7)]
 
 SENSITIVE_COLS = ["sex", "marriage"]
 MODEL_FEATURES = ["limit_bal", "education", "age", *PAY_STATUS, *BILL_AMT, *PAY_AMT]
-MONITORED_FEATURES = MODEL_FEATURES
+DERIVED_FEATURES = ["utilization", "payment_ratio", "months_delayed"]
+MONITORED_FEATURES = [*MODEL_FEATURES, *DERIVED_FEATURES]
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", f"sqlite:///{ROOT / 'mlflow.db'}")
 PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "localhost:9091")

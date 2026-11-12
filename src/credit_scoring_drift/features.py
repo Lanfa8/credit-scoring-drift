@@ -3,7 +3,7 @@ import pandas as pd
 
 from credit_scoring_drift import config
 
-DERIVED = ["utilization", "payment_ratio", "months_delayed"]
+DERIVED = config.DERIVED_FEATURES
 
 
 def add_derived_features(df: pd.DataFrame) -> pd.DataFrame:
