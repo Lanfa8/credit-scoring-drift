@@ -1,0 +1,67 @@
+groups:
+  - name: credit-data-quality
+    rules:
+      - alert: CreditIngestionBlocked
+        expr: credit_pipeline_batch_status == 0
+        labels:
+          severity: critical
+        annotations:
+          summary: "Batch {{ $labels.batch }} blocked by the data contract"
+
+  - name: credit-drift
+    rules:
+      - alert: CreditDatasetDrift
+        expr: credit_drift_share >= 0.25
+        labels:
+          severity: critical
+        annotations:
+          summary: "{{ $value | humanizePercentage }} of features drifted in {{ $labels.batch }}"
+
+      - alert: CreditFeatureDriftSevere
+        expr: credit_feature_psi >= 0.25
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $labels.feature }} PSI={{ $value | printf \"%.2f\" }} in {{ $labels.batch }}"
+
+      - alert: CreditPredictionDrift
+        expr: credit_prediction_psi >= 0.1
+        labels:
+          severity: warning
+        annotations:
+          summary: "Score distribution shifted in {{ $labels.batch }}"
+
+  - name: credit-model
+    rules:
+      - alert: CreditModelDegraded
+        expr: credit_model_auc_drop >= 0.05
+        labels:
+          severity: critical
+        annotations:
+          summary: "AUC dropped {{ $value | printf \"%.3f\" }} in {{ $labels.batch }}"
+
+      - alert: CreditConceptDriftSuspected
+        expr: >
+          credit_default_rate{kind="actual"}
+          - ignoring(kind) credit_default_rate{kind="mean_score"} >= 0.05
+        labels:
+          severity: critical
+        annotations:
+          summary: "Observed default above model expectation in {{ $labels.batch }}"
+
+  - name: credit-infra
+    rules:
+      - alert: CreditPipelineTaskFailed
+        expr: credit_pipeline_task_success{task!="ingest"} == 0
+        labels:
+          severity: critical
+        annotations:
+          summary: "Task {{ $labels.task }} failed for {{ $labels.batch }}"
+
+      - alert: MonitoringTargetDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "{{ $labels.job }} is down"
