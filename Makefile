@@ -29,3 +29,13 @@ simulate:
 .PHONY: pipeline
 pipeline:
 	$(PY) -m credit_scoring_drift.pipeline
+
+.PHONY: up down mlflow-ui
+up:
+	docker compose up -d
+
+down:
+	docker compose down
+
+mlflow-ui:
+	uv run mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5000
