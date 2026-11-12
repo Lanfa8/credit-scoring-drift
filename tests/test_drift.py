@@ -32,6 +32,6 @@ def test_statistical_tests_flag_only_shifted_column(valid_batch, rng):
     reference = pd.concat([valid_batch] * 10, ignore_index=True)
     current = reference.sample(1000, random_state=0).copy()
     current["age"] = current["age"] - 15
-    stats = drift.statistical_tests(reference, current, config.MODEL_FEATURES)
+    stats = drift.statistical_tests(reference, current, [*config.MODEL_FEATURES, "age"])
     flagged = stats.loc[stats["drift"], "feature"].tolist()
     assert flagged == ["age"]

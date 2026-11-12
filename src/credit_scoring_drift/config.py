@@ -26,9 +26,12 @@ BILL_AMT = [f"bill_amt_{i}" for i in range(1, 7)]
 PAY_AMT = [f"pay_amt_{i}" for i in range(1, 7)]
 
 SENSITIVE_COLS = ["sex", "marriage"]
-MODEL_FEATURES = ["limit_bal", "education", "age", *PAY_STATUS, *BILL_AMT, *PAY_AMT]
+# age failed the 4/5 rule across age bands with negligible AUC gain, so it is only
+# monitored (population drift and fairness), never used for the decision
+EXCLUDED_FROM_MODEL = [*SENSITIVE_COLS, "age"]
+MODEL_FEATURES = ["limit_bal", "education", *PAY_STATUS, *BILL_AMT, *PAY_AMT]
 DERIVED_FEATURES = ["utilization", "payment_ratio", "months_delayed"]
-MONITORED_FEATURES = [*MODEL_FEATURES, *DERIVED_FEATURES]
+MONITORED_FEATURES = [*MODEL_FEATURES, "age", *DERIVED_FEATURES]
 
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", f"sqlite:///{ROOT / 'mlflow.db'}")
 PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "localhost:9091")

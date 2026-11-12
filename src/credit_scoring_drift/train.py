@@ -129,7 +129,7 @@ def train():
         mlflow.set_tags(
             {
                 "reference_fingerprint": data_fingerprint(reference),
-                "excluded_sensitive_features": ",".join(config.SENSITIVE_COLS),
+                "excluded_features": ",".join(config.EXCLUDED_FROM_MODEL),
             }
         )
         mlflow.log_metrics({f"test_{k}": v for k, v in metrics.items()})
@@ -158,7 +158,7 @@ def train():
         "registered_model": REGISTERED_MODEL,
         "threshold": threshold,
         "features": config.MODEL_FEATURES,
-        "excluded_features": config.SENSITIVE_COLS,
+        "excluded_features": config.EXCLUDED_FROM_MODEL,
         "reference_fingerprint": data_fingerprint(reference),
         "metrics": metrics,
         "fairness": fairness,
