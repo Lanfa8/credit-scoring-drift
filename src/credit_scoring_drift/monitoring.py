@@ -103,6 +103,27 @@ def setup_logging(level: int = logging.INFO) -> None:
         logging.getLogger(noisy).setLevel(logging.WARNING)
 
 
+class _LazyGauge:
+    """Unlabelled gauges are exported as 0 as soon as they exist; create them on first
+    use so a blocked batch does not report, e.g., drift_share=0."""
+
+    def __init__(self, name: str, doc: str, registry: CollectorRegistry):
+        self.args = (name, doc)
+        self.registry = registry
+        self.gauge: Gauge | None = None
+
+    def _get(self) -> Gauge:
+        if self.gauge is None:
+            self.gauge = Gauge(*self.args, registry=self.registry)
+        return self.gauge
+
+    def set(self, value: float) -> None:
+        self._get().set(value)
+
+    def set_to_current_time(self) -> None:
+        self._get().set_to_current_time()
+
+
 class BatchMetrics:
     def __init__(self, batch_id: str):
         self.batch_id = batch_id
@@ -115,25 +136,25 @@ class BatchMetrics:
         self.task_duration = Gauge(
             "credit_pipeline_task_duration_seconds", "Task wall time", ["task"], registry=r
         )
-        self.batch_status = Gauge(
-            "credit_pipeline_batch_status", "1 accepted, 0 blocked by contract", registry=r
+        self.batch_status = _LazyGauge(
+            "credit_pipeline_batch_status", "1 accepted, 0 blocked by contract", r
         )
         self.rows = Gauge("credit_pipeline_rows", "Rows per stage", ["stage"], registry=r)
         self.violations = Gauge(
             "credit_contract_violations", "Contract violations by check", ["check"], registry=r
         )
-        self.drift_share = Gauge("credit_drift_share", "Share of drifted features", registry=r)
-        self.drifted = Gauge("credit_drifted_features", "Number of drifted features", registry=r)
+        self.drift_share = _LazyGauge("credit_drift_share", "Share of drifted features", r)
+        self.drifted = _LazyGauge("credit_drifted_features", "Number of drifted features", r)
         self.feature_psi = Gauge("credit_feature_psi", "PSI per feature", ["feature"], registry=r)
         self.feature_ks = Gauge(
             "credit_feature_ks_statistic", "KS statistic per feature", ["feature"], registry=r
         )
-        self.prediction_psi = Gauge("credit_prediction_psi", "PSI of model scores", registry=r)
-        self.target_psi = Gauge("credit_target_psi", "PSI of observed default", registry=r)
+        self.prediction_psi = _LazyGauge("credit_prediction_psi", "PSI of model scores", r)
+        self.target_psi = _LazyGauge("credit_target_psi", "PSI of observed default", r)
         self.model_metric = Gauge(
             "credit_model_metric", "Model performance on labelled batch", ["metric"], registry=r
         )
-        self.auc_drop = Gauge("credit_model_auc_drop", "Baseline AUC minus batch AUC", registry=r)
+        self.auc_drop = _LazyGauge("credit_model_auc_drop", "Baseline AUC minus batch AUC", r)
         self.default_rate = Gauge(
             "credit_default_rate",
             "Default rates (predicted/actual/mean score)",
@@ -143,20 +164,18 @@ class BatchMetrics:
         self.fairness = Gauge(
             "credit_fairness_disparate_impact", "Approval rate ratio", ["attribute"], registry=r
         )
-        self.latency = Gauge(
-            "credit_inference_latency_seconds", "Scoring latency for the batch", registry=r
+        self.latency = _LazyGauge(
+            "credit_inference_latency_seconds", "Scoring latency for the batch", r
         )
-        self.throughput = Gauge(
-            "credit_inference_rows_per_second", "Scoring throughput", registry=r
-        )
+        self.throughput = _LazyGauge("credit_inference_rows_per_second", "Scoring throughput", r)
         self.alerts = Gauge(
             "credit_alerts", "Alerts raised for the batch", ["severity"], registry=r
         )
         self.alert_active = Gauge(
             "credit_alert_active", "Alert raised", ["alert", "severity", "subject"], registry=r
         )
-        self.last_run = Gauge(
-            "credit_pipeline_last_run_timestamp_seconds", "Last processing time", registry=r
+        self.last_run = _LazyGauge(
+            "credit_pipeline_last_run_timestamp_seconds", "Last processing time", r
         )
 
     @contextmanager
