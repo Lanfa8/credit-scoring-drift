@@ -1,0 +1,89 @@
+{
+  "trained_at": "2026-11-12T01:33:47+00:00",
+  "mlflow_run_id": "ac6dd1f6c1764d6cb741a6f0dbaf550b",
+  "registered_model": "credit-scoring-xgb",
+  "threshold": 0.3194253146648407,
+  "features": [
+    "limit_bal",
+    "education",
+    "pay_status_1",
+    "pay_status_2",
+    "pay_status_3",
+    "pay_status_4",
+    "pay_status_5",
+    "pay_status_6",
+    "bill_amt_1",
+    "bill_amt_2",
+    "bill_amt_3",
+    "bill_amt_4",
+    "bill_amt_5",
+    "bill_amt_6",
+    "pay_amt_1",
+    "pay_amt_2",
+    "pay_amt_3",
+    "pay_amt_4",
+    "pay_amt_5",
+    "pay_amt_6"
+  ],
+  "excluded_features": [
+    "sex",
+    "marriage",
+    "age"
+  ],
+  "reference_fingerprint": "de5589f31d74",
+  "metrics": {
+    "roc_auc": 0.7769562096195263,
+    "ks": 0.433230459690094,
+    "f1": 0.5373592630501536,
+    "precision": 0.5474452554744526,
+    "recall": 0.5276381909547738,
+    "brier": 0.13664637506008148,
+    "predicted_default_rate": 0.21334816462736375,
+    "actual_default_rate": 0.22135706340378197
+  },
+  "fairness": {
+    "sex": {
+      "approval_rate": {
+        "female": 0.8089,
+        "male": 0.7514
+      },
+      "disparate_impact": 0.9289,
+      "passes_four_fifths_rule": true
+    },
+    "age_band": {
+      "approval_rate": {
+        "18-25": 0.7366,
+        "26-40": 0.8033,
+        "41-60": 0.7784,
+        "60+": 0.6923
+      },
+      "disparate_impact": 0.8619,
+      "passes_four_fifths_rule": true
+    }
+  },
+  "feature_importance": {
+    "pay_status_1": 0.256,
+    "months_delayed": 0.2176,
+    "pay_status_2": 0.1468,
+    "pay_status_3": 0.0705,
+    "pay_status_6": 0.0274,
+    "bill_amt_1": 0.0197,
+    "limit_bal": 0.0196,
+    "pay_status_4": 0.0188,
+    "pay_amt_1": 0.0184,
+    "utilization": 0.0183,
+    "pay_amt_4": 0.0182,
+    "pay_amt_2": 0.0168,
+    "payment_ratio": 0.0168,
+    "pay_amt_6": 0.0159,
+    "education": 0.0143,
+    "bill_amt_2": 0.0141,
+    "bill_amt_3": 0.0139,
+    "pay_amt_3": 0.0132,
+    "bill_amt_5": 0.013,
+    "pay_amt_5": 0.0129,
+    "pay_status_5": 0.0128,
+    "bill_amt_4": 0.0127,
+    "bill_amt_6": 0.0124
+  }
+}

@@ -1,0 +1,299 @@
+[
+  {
+    "batch_id": "2025-01",
+    "alert": "FairnessViolation",
+    "severity": "warning",
+    "subject": "age_band",
+    "value": 0.7948,
+    "threshold": 0.8,
+    "message": "approval rate ratio for age_band = 0.79"
+  },
+  {
+    "batch_id": "2025-03-upstream-bug",
+    "alert": "IngestionBlocked",
+    "severity": "critical",
+    "subject": "data_contract",
+    "value": 167.0,
+    "threshold": 0.0,
+    "message": "batch rejected by data contract, 167 invalid rows: limit_bal:not_nullable (62), dataframe:no_duplicated_records (50), customer_key:field_uniqueness (50)"
+  },
+  {
+    "batch_id": "2025-03",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "utilization",
+    "value": 0.2228,
+    "threshold": 0.1,
+    "message": "utilization: PSI=0.223, KS p=2.9e-48, mean 0.43 -> 0.52"
+  },
+  {
+    "batch_id": "2025-03",
+    "alert": "FairnessViolation",
+    "severity": "warning",
+    "subject": "age_band",
+    "value": 0.7579,
+    "threshold": 0.8,
+    "message": "approval rate ratio for age_band = 0.76"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "DatasetDrift",
+    "severity": "warning",
+    "subject": "dataset",
+    "value": 0.1667,
+    "threshold": 0.15,
+    "message": "4 features drifted (17%): utilization, age, payment_ratio, pay_status_1"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "utilization",
+    "value": 0.3301,
+    "threshold": 0.1,
+    "message": "utilization: PSI=0.330, KS p=1.4e-74, mean 0.43 -> 0.57"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "age",
+    "value": 0.1539,
+    "threshold": 0.1,
+    "message": "age: PSI=0.154, KS p=5.0e-30, mean 35.12 -> 31.84"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "payment_ratio",
+    "value": 0.1291,
+    "threshold": 0.1,
+    "message": "payment_ratio: PSI=0.129, KS p=2.4e-19, mean 0.34 -> 0.32"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "pay_status_1",
+    "value": 0.1154,
+    "threshold": 0.1,
+    "message": "pay_status_1: PSI=0.115, KS p=3.0e-28, mean -0.02 -> 0.30"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "PredictionDrift",
+    "severity": "warning",
+    "subject": "score",
+    "value": 0.1191,
+    "threshold": 0.1,
+    "message": "score distribution shifted, PSI=0.119"
+  },
+  {
+    "batch_id": "2025-04",
+    "alert": "FairnessViolation",
+    "severity": "warning",
+    "subject": "age_band",
+    "value": 0.7218,
+    "threshold": 0.8,
+    "message": "approval rate ratio for age_band = 0.72"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "DatasetDrift",
+    "severity": "critical",
+    "subject": "dataset",
+    "value": 0.25,
+    "threshold": 0.15,
+    "message": "6 features drifted (25%): utilization, age, payment_ratio, pay_status_1, months_delayed, pay_amt_2"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "utilization",
+    "value": 0.5297,
+    "threshold": 0.1,
+    "message": "utilization: PSI=0.530, KS p=1.5e-127, mean 0.43 -> 0.67"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "age",
+    "value": 0.3761,
+    "threshold": 0.1,
+    "message": "age: PSI=0.376, KS p=6.4e-70, mean 35.12 -> 30.27"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "payment_ratio",
+    "value": 0.2226,
+    "threshold": 0.1,
+    "message": "payment_ratio: PSI=0.223, KS p=3.0e-36, mean 0.34 -> 0.25"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "pay_status_1",
+    "value": 0.1782,
+    "threshold": 0.1,
+    "message": "pay_status_1: PSI=0.178, KS p=3.0e-44, mean -0.02 -> 0.40"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "months_delayed",
+    "value": 0.1329,
+    "threshold": 0.1,
+    "message": "months_delayed: PSI=0.133, KS p=6.8e-37, mean 0.83 -> 1.37"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "pay_amt_2",
+    "value": 0.1197,
+    "threshold": 0.1,
+    "message": "pay_amt_2: PSI=0.120, KS p=1.1e-05, mean 6,339.38 -> 5,228.46"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "PredictionDrift",
+    "severity": "warning",
+    "subject": "score",
+    "value": 0.1578,
+    "threshold": 0.1,
+    "message": "score distribution shifted, PSI=0.158"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "ModelPerformanceDegraded",
+    "severity": "warning",
+    "subject": "roc_auc",
+    "value": 0.0691,
+    "threshold": 0.03,
+    "message": "AUC 0.708 vs baseline 0.777"
+  },
+  {
+    "batch_id": "2025-05",
+    "alert": "ConceptDriftSuspected",
+    "severity": "warning",
+    "subject": "calibration",
+    "value": 0.0661,
+    "threshold": 0.05,
+    "message": "observed default 36.4% vs expected 29.7%: P(default|x) changed"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "DatasetDrift",
+    "severity": "critical",
+    "subject": "dataset",
+    "value": 0.3333,
+    "threshold": 0.15,
+    "message": "8 features drifted (33%): utilization, age, payment_ratio, pay_status_1, months_delayed, pay_status_2, pay_amt_1, bill_amt_1"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "utilization",
+    "value": 0.6805,
+    "threshold": 0.1,
+    "message": "utilization: PSI=0.680, KS p=1.3e-160, mean 0.43 -> 0.73"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "age",
+    "value": 0.6305,
+    "threshold": 0.1,
+    "message": "age: PSI=0.630, KS p=1.7e-112, mean 35.12 -> 29.16"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "payment_ratio",
+    "value": 0.3663,
+    "threshold": 0.1,
+    "message": "payment_ratio: PSI=0.366, KS p=4.1e-61, mean 0.34 -> 0.25"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "pay_status_1",
+    "value": 0.3583,
+    "threshold": 0.1,
+    "message": "pay_status_1: PSI=0.358, KS p=6.8e-96, mean -0.02 -> 0.57"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "critical",
+    "subject": "months_delayed",
+    "value": 0.2606,
+    "threshold": 0.1,
+    "message": "months_delayed: PSI=0.261, KS p=3.5e-73, mean 0.83 -> 1.60"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "pay_status_2",
+    "value": 0.1593,
+    "threshold": 0.1,
+    "message": "pay_status_2: PSI=0.159, KS p=9.7e-32, mean -0.13 -> 0.26"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "pay_amt_1",
+    "value": 0.1064,
+    "threshold": 0.1,
+    "message": "pay_amt_1: PSI=0.106, KS p=5.8e-13, mean 5,845.91 -> 4,620.82"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "FeatureDrift",
+    "severity": "warning",
+    "subject": "bill_amt_1",
+    "value": 0.1026,
+    "threshold": 0.1,
+    "message": "bill_amt_1: PSI=0.103, KS p=6.8e-12, mean 51,202.71 -> 69,924.76"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "PredictionDrift",
+    "severity": "critical",
+    "subject": "score",
+    "value": 0.2745,
+    "threshold": 0.1,
+    "message": "score distribution shifted, PSI=0.275"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "ModelPerformanceDegraded",
+    "severity": "critical",
+    "subject": "roc_auc",
+    "value": 0.1278,
+    "threshold": 0.03,
+    "message": "AUC 0.649 vs baseline 0.777"
+  },
+  {
+    "batch_id": "2025-06",
+    "alert": "ConceptDriftSuspected",
+    "severity": "critical",
+    "subject": "calibration",
+    "value": 0.1356,
+    "threshold": 0.05,
+    "message": "observed default 45.9% vs expected 32.3%: P(default|x) changed"
+  }
+]

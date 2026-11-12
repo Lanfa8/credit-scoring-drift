@@ -1,0 +1,9 @@
+{
+  "batch_id": "2025-03",
+  "validated_at": "2026-11-12T01:34:05+00:00",
+  "contract": "credit_application_contract",
+  "passed": true,
+  "rows": 2000,
+  "invalid_rows": 0,
+  "violations_by_check": {}
+}

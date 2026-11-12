@@ -1,0 +1,859 @@
+{
+  "generated_at": "2026-11-12T01:34:19+00:00",
+  "model": {
+    "mlflow_run_id": "ac6dd1f6c1764d6cb741a6f0dbaf550b",
+    "threshold": 0.3194253146648407,
+    "metrics": {
+      "roc_auc": 0.7769562096195263,
+      "ks": 0.433230459690094,
+      "f1": 0.5373592630501536,
+      "precision": 0.5474452554744526,
+      "recall": 0.5276381909547738,
+      "brier": 0.13664637506008148,
+      "predicted_default_rate": 0.21334816462736375,
+      "actual_default_rate": 0.22135706340378197
+    },
+    "fairness": {
+      "sex": {
+        "approval_rate": {
+          "female": 0.8089,
+          "male": 0.7514
+        },
+        "disparate_impact": 0.9289,
+        "passes_four_fifths_rule": true
+      },
+      "age_band": {
+        "approval_rate": {
+          "18-25": 0.7366,
+          "26-40": 0.8033,
+          "41-60": 0.7784,
+          "60+": 0.6923
+        },
+        "disparate_impact": 0.8619,
+        "passes_four_fifths_rule": true
+      }
+    }
+  },
+  "batches": [
+    {
+      "batch_id": "2025-01",
+      "file": "2025-01.csv",
+      "period": "2025-01",
+      "intensity": 0.0,
+      "concept_drift": false,
+      "notes": "stable period, same profile as reference",
+      "injected_concept_default": 0.0,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-01",
+        "drift_share": 0.0,
+        "drifted_features": [],
+        "prediction_psi": 0.0122,
+        "target_psi": 0.0,
+        "evidently_drift_share": 0.0,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-01.html"
+      },
+      "feature_psi": {
+        "age": 0.0105,
+        "pay_status_4": 0.0096,
+        "bill_amt_1": 0.0095,
+        "pay_status_3": 0.0081,
+        "pay_amt_2": 0.008,
+        "pay_amt_4": 0.0074,
+        "utilization": 0.0068,
+        "pay_amt_3": 0.0062,
+        "bill_amt_3": 0.0061,
+        "bill_amt_2": 0.006,
+        "months_delayed": 0.005,
+        "pay_status_1": 0.0045,
+        "pay_status_2": 0.004,
+        "pay_amt_5": 0.0039,
+        "bill_amt_5": 0.0039,
+        "pay_status_6": 0.0034,
+        "limit_bal": 0.0034,
+        "pay_amt_1": 0.0034,
+        "pay_amt_6": 0.003,
+        "education": 0.003,
+        "pay_status_5": 0.0028,
+        "bill_amt_6": 0.0023,
+        "payment_ratio": 0.0019,
+        "bill_amt_4": 0.0016
+      },
+      "performance": {
+        "roc_auc": 0.7891321569934344,
+        "ks": 0.44925132393836975,
+        "f1": 0.5345413363533409,
+        "precision": 0.5303370786516854,
+        "recall": 0.5388127853881278,
+        "brier": 0.13271209597587585,
+        "predicted_default_rate": 0.2225,
+        "actual_default_rate": 0.219,
+        "mean_score": 0.2220570147037506
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.7934,
+            "male": 0.751
+          },
+          "disparate_impact": 0.9465,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.7238,
+            "26-40": 0.7862,
+            "41-60": 0.7864,
+            "60+": 0.625
+          },
+          "disparate_impact": 0.7948,
+          "passes_four_fifths_rule": false
+        }
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-01",
+          "alert": "FairnessViolation",
+          "severity": "warning",
+          "subject": "age_band",
+          "value": 0.7948,
+          "threshold": 0.8,
+          "message": "approval rate ratio for age_band = 0.79"
+        }
+      ]
+    },
+    {
+      "batch_id": "2025-02",
+      "file": "2025-02.csv",
+      "period": "2025-02",
+      "intensity": 0.1,
+      "concept_drift": false,
+      "notes": "early inflation signals",
+      "injected_concept_default": 0.0,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-02",
+        "drift_share": 0.0,
+        "drifted_features": [],
+        "prediction_psi": 0.0115,
+        "target_psi": 0.0,
+        "evidently_drift_share": 0.0,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-02.html"
+      },
+      "feature_psi": {
+        "pay_amt_2": 0.0639,
+        "utilization": 0.0632,
+        "pay_amt_1": 0.0372,
+        "pay_amt_5": 0.0204,
+        "pay_status_1": 0.0136,
+        "age": 0.0115,
+        "pay_amt_3": 0.0114,
+        "payment_ratio": 0.0113,
+        "pay_status_6": 0.0094,
+        "pay_status_3": 0.0088,
+        "pay_status_4": 0.0086,
+        "bill_amt_3": 0.0085,
+        "bill_amt_6": 0.0076,
+        "bill_amt_4": 0.007,
+        "pay_status_2": 0.007,
+        "limit_bal": 0.0053,
+        "bill_amt_5": 0.0052,
+        "bill_amt_2": 0.0048,
+        "months_delayed": 0.0046,
+        "pay_status_5": 0.0046,
+        "bill_amt_1": 0.0035,
+        "pay_amt_6": 0.0034,
+        "pay_amt_4": 0.0023,
+        "education": 0.0002
+      },
+      "performance": {
+        "roc_auc": 0.7692066685113853,
+        "ks": 0.42977699637413025,
+        "f1": 0.5408515535097813,
+        "precision": 0.5439814814814815,
+        "recall": 0.5377574370709383,
+        "brier": 0.13498368859291077,
+        "predicted_default_rate": 0.216,
+        "actual_default_rate": 0.2185,
+        "mean_score": 0.22099141776561737
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.8079,
+            "male": 0.7454
+          },
+          "disparate_impact": 0.9226,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.7635,
+            "26-40": 0.7894,
+            "41-60": 0.7852,
+            "60+": 0.6923
+          },
+          "disparate_impact": 0.877,
+          "passes_four_fifths_rule": true
+        }
+      },
+      "alerts": []
+    },
+    {
+      "batch_id": "2025-03-upstream-bug",
+      "file": "2025-03-upstream-bug.csv",
+      "period": "2025-03",
+      "intensity": 0.3,
+      "concept_drift": false,
+      "notes": "corrupted extraction: nulls, invalid ages, legacy codes, negative payments, duplicates and a leaked CPF column",
+      "status": "blocked",
+      "rows_received": 2025,
+      "invalid_rows": 167,
+      "violations": {
+        "limit_bal:not_nullable": 62,
+        "dataframe:no_duplicated_records": 50,
+        "customer_key:field_uniqueness": 50,
+        "pay_amt_1:in_range(0, 3000000)": 26,
+        "age:in_range(18, 100)": 25,
+        "education:isin([1, 2, 3, 4])": 16,
+        "dataframe:unexpected_column:cpf": 1
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-03-upstream-bug",
+          "alert": "IngestionBlocked",
+          "severity": "critical",
+          "subject": "data_contract",
+          "value": 167.0,
+          "threshold": 0.0,
+          "message": "batch rejected by data contract, 167 invalid rows: limit_bal:not_nullable (62), dataframe:no_duplicated_records (50), customer_key:field_uniqueness (50)"
+        }
+      ]
+    },
+    {
+      "batch_id": "2025-03",
+      "file": "2025-03.csv",
+      "period": "2025-03",
+      "intensity": 0.3,
+      "concept_drift": false,
+      "notes": "inflation rising, younger customers arriving",
+      "injected_concept_default": 0.0,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-03",
+        "drift_share": 0.0417,
+        "drifted_features": [
+          "utilization"
+        ],
+        "prediction_psi": 0.0533,
+        "target_psi": 0.0072,
+        "evidently_drift_share": 0.0417,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-03.html"
+      },
+      "feature_psi": {
+        "utilization": 0.2228,
+        "age": 0.0624,
+        "pay_amt_2": 0.0543,
+        "payment_ratio": 0.0476,
+        "pay_amt_1": 0.0462,
+        "pay_amt_6": 0.0358,
+        "pay_amt_5": 0.0329,
+        "bill_amt_1": 0.0291,
+        "pay_status_1": 0.0288,
+        "pay_amt_3": 0.0286,
+        "pay_amt_4": 0.0209,
+        "months_delayed": 0.0175,
+        "pay_status_4": 0.0168,
+        "pay_status_2": 0.0158,
+        "limit_bal": 0.0156,
+        "bill_amt_5": 0.0136,
+        "bill_amt_2": 0.0126,
+        "pay_status_3": 0.0111,
+        "pay_status_6": 0.0101,
+        "bill_amt_3": 0.0098,
+        "bill_amt_6": 0.0098,
+        "pay_status_5": 0.0097,
+        "bill_amt_4": 0.0093,
+        "education": 0.0051
+      },
+      "performance": {
+        "roc_auc": 0.7905553921087902,
+        "ks": 0.4554477035999298,
+        "f1": 0.5805843543826579,
+        "precision": 0.5641025641025641,
+        "recall": 0.5980582524271845,
+        "brier": 0.1451742798089981,
+        "predicted_default_rate": 0.273,
+        "actual_default_rate": 0.2575,
+        "mean_score": 0.25807178020477295
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.7394,
+            "male": 0.7073
+          },
+          "disparate_impact": 0.9565,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.6215,
+            "26-40": 0.7539,
+            "41-60": 0.7385,
+            "60+": 0.5714
+          },
+          "disparate_impact": 0.7579,
+          "passes_four_fifths_rule": false
+        }
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-03",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "utilization",
+          "value": 0.2228,
+          "threshold": 0.1,
+          "message": "utilization: PSI=0.223, KS p=2.9e-48, mean 0.43 -> 0.52"
+        },
+        {
+          "batch_id": "2025-03",
+          "alert": "FairnessViolation",
+          "severity": "warning",
+          "subject": "age_band",
+          "value": 0.7579,
+          "threshold": 0.8,
+          "message": "approval rate ratio for age_band = 0.76"
+        }
+      ]
+    },
+    {
+      "batch_id": "2025-04",
+      "file": "2025-04.csv",
+      "period": "2025-04",
+      "intensity": 0.5,
+      "concept_drift": true,
+      "notes": "income squeeze, leveraged customers start defaulting",
+      "injected_concept_default": 0.0245,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-04",
+        "drift_share": 0.1667,
+        "drifted_features": [
+          "utilization",
+          "age",
+          "payment_ratio",
+          "pay_status_1"
+        ],
+        "prediction_psi": 0.1191,
+        "target_psi": 0.0259,
+        "evidently_drift_share": 0.1667,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-04.html"
+      },
+      "feature_psi": {
+        "utilization": 0.3301,
+        "age": 0.1539,
+        "payment_ratio": 0.1291,
+        "pay_status_1": 0.1154,
+        "months_delayed": 0.0888,
+        "pay_status_2": 0.0619,
+        "pay_amt_1": 0.0609,
+        "pay_amt_2": 0.0593,
+        "pay_status_4": 0.0413,
+        "pay_status_3": 0.0403,
+        "pay_amt_3": 0.0395,
+        "bill_amt_1": 0.0374,
+        "pay_amt_5": 0.0361,
+        "pay_amt_6": 0.031,
+        "pay_status_5": 0.028,
+        "pay_amt_4": 0.0269,
+        "bill_amt_6": 0.0243,
+        "limit_bal": 0.0235,
+        "pay_status_6": 0.0226,
+        "bill_amt_2": 0.0199,
+        "bill_amt_4": 0.0192,
+        "bill_amt_5": 0.0186,
+        "bill_amt_3": 0.0179,
+        "education": 0.0066
+      },
+      "performance": {
+        "roc_auc": 0.7650037343649945,
+        "ks": 0.42166969180107117,
+        "f1": 0.5789056304520223,
+        "precision": 0.5383480825958702,
+        "recall": 0.6260720411663808,
+        "brier": 0.1644054353237152,
+        "predicted_default_rate": 0.339,
+        "actual_default_rate": 0.2915,
+        "mean_score": 0.2850712835788727
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.6793,
+            "male": 0.6311
+          },
+          "disparate_impact": 0.929,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.5533,
+            "26-40": 0.6927,
+            "41-60": 0.6886,
+            "60+": 0.5
+          },
+          "disparate_impact": 0.7218,
+          "passes_four_fifths_rule": false
+        }
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-04",
+          "alert": "DatasetDrift",
+          "severity": "warning",
+          "subject": "dataset",
+          "value": 0.1667,
+          "threshold": 0.15,
+          "message": "4 features drifted (17%): utilization, age, payment_ratio, pay_status_1"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "utilization",
+          "value": 0.3301,
+          "threshold": 0.1,
+          "message": "utilization: PSI=0.330, KS p=1.4e-74, mean 0.43 -> 0.57"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "age",
+          "value": 0.1539,
+          "threshold": 0.1,
+          "message": "age: PSI=0.154, KS p=5.0e-30, mean 35.12 -> 31.84"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "payment_ratio",
+          "value": 0.1291,
+          "threshold": 0.1,
+          "message": "payment_ratio: PSI=0.129, KS p=2.4e-19, mean 0.34 -> 0.32"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "pay_status_1",
+          "value": 0.1154,
+          "threshold": 0.1,
+          "message": "pay_status_1: PSI=0.115, KS p=3.0e-28, mean -0.02 -> 0.30"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "PredictionDrift",
+          "severity": "warning",
+          "subject": "score",
+          "value": 0.1191,
+          "threshold": 0.1,
+          "message": "score distribution shifted, PSI=0.119"
+        },
+        {
+          "batch_id": "2025-04",
+          "alert": "FairnessViolation",
+          "severity": "warning",
+          "subject": "age_band",
+          "value": 0.7218,
+          "threshold": 0.8,
+          "message": "approval rate ratio for age_band = 0.72"
+        }
+      ]
+    },
+    {
+      "batch_id": "2025-05",
+      "file": "2025-05.csv",
+      "period": "2025-05",
+      "intensity": 0.75,
+      "concept_drift": true,
+      "notes": "unemployment up, strong profile change",
+      "injected_concept_default": 0.076,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-05",
+        "drift_share": 0.25,
+        "drifted_features": [
+          "utilization",
+          "age",
+          "payment_ratio",
+          "pay_status_1",
+          "months_delayed",
+          "pay_amt_2"
+        ],
+        "prediction_psi": 0.1578,
+        "target_psi": 0.0992,
+        "evidently_drift_share": 0.25,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-05.html"
+      },
+      "feature_psi": {
+        "utilization": 0.5297,
+        "age": 0.3761,
+        "payment_ratio": 0.2226,
+        "pay_status_1": 0.1782,
+        "months_delayed": 0.1329,
+        "pay_amt_2": 0.1197,
+        "pay_amt_1": 0.0996,
+        "pay_status_2": 0.0968,
+        "bill_amt_1": 0.0728,
+        "bill_amt_5": 0.0664,
+        "bill_amt_6": 0.0596,
+        "bill_amt_4": 0.0549,
+        "limit_bal": 0.0542,
+        "bill_amt_2": 0.0534,
+        "bill_amt_3": 0.0511,
+        "pay_status_4": 0.0506,
+        "pay_status_3": 0.047,
+        "pay_amt_4": 0.0459,
+        "pay_amt_5": 0.0387,
+        "pay_status_5": 0.0367,
+        "pay_status_6": 0.0348,
+        "pay_amt_6": 0.0317,
+        "pay_amt_3": 0.031,
+        "education": 0.0139
+      },
+      "performance": {
+        "roc_auc": 0.7078903606920152,
+        "ks": 0.3113744258880615,
+        "f1": 0.5475862068965517,
+        "precision": 0.5491009681881052,
+        "recall": 0.546079779917469,
+        "brier": 0.2095378339290619,
+        "predicted_default_rate": 0.3615,
+        "actual_default_rate": 0.3635,
+        "mean_score": 0.29743286967277527
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.6592,
+            "male": 0.6037
+          },
+          "disparate_impact": 0.9159,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.5762,
+            "26-40": 0.6687,
+            "41-60": 0.6059,
+            "60+": 0.6667
+          },
+          "disparate_impact": 0.8616,
+          "passes_four_fifths_rule": true
+        }
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-05",
+          "alert": "DatasetDrift",
+          "severity": "critical",
+          "subject": "dataset",
+          "value": 0.25,
+          "threshold": 0.15,
+          "message": "6 features drifted (25%): utilization, age, payment_ratio, pay_status_1, months_delayed, pay_amt_2"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "utilization",
+          "value": 0.5297,
+          "threshold": 0.1,
+          "message": "utilization: PSI=0.530, KS p=1.5e-127, mean 0.43 -> 0.67"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "age",
+          "value": 0.3761,
+          "threshold": 0.1,
+          "message": "age: PSI=0.376, KS p=6.4e-70, mean 35.12 -> 30.27"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "payment_ratio",
+          "value": 0.2226,
+          "threshold": 0.1,
+          "message": "payment_ratio: PSI=0.223, KS p=3.0e-36, mean 0.34 -> 0.25"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "pay_status_1",
+          "value": 0.1782,
+          "threshold": 0.1,
+          "message": "pay_status_1: PSI=0.178, KS p=3.0e-44, mean -0.02 -> 0.40"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "months_delayed",
+          "value": 0.1329,
+          "threshold": 0.1,
+          "message": "months_delayed: PSI=0.133, KS p=6.8e-37, mean 0.83 -> 1.37"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "pay_amt_2",
+          "value": 0.1197,
+          "threshold": 0.1,
+          "message": "pay_amt_2: PSI=0.120, KS p=1.1e-05, mean 6,339.38 -> 5,228.46"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "PredictionDrift",
+          "severity": "warning",
+          "subject": "score",
+          "value": 0.1578,
+          "threshold": 0.1,
+          "message": "score distribution shifted, PSI=0.158"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "ModelPerformanceDegraded",
+          "severity": "warning",
+          "subject": "roc_auc",
+          "value": 0.0691,
+          "threshold": 0.03,
+          "message": "AUC 0.708 vs baseline 0.777"
+        },
+        {
+          "batch_id": "2025-05",
+          "alert": "ConceptDriftSuspected",
+          "severity": "warning",
+          "subject": "calibration",
+          "value": 0.0661,
+          "threshold": 0.05,
+          "message": "observed default 36.4% vs expected 29.7%: P(default|x) changed"
+        }
+      ]
+    },
+    {
+      "batch_id": "2025-06",
+      "file": "2025-06.csv",
+      "period": "2025-06",
+      "intensity": 1.0,
+      "concept_drift": true,
+      "notes": "full economic shock",
+      "injected_concept_default": 0.1325,
+      "status": "processed",
+      "rows_received": 2000,
+      "drift": {
+        "batch_id": "2025-06",
+        "drift_share": 0.3333,
+        "drifted_features": [
+          "utilization",
+          "age",
+          "payment_ratio",
+          "pay_status_1",
+          "months_delayed",
+          "pay_status_2",
+          "pay_amt_1",
+          "bill_amt_1"
+        ],
+        "prediction_psi": 0.2745,
+        "target_psi": 0.2598,
+        "evidently_drift_share": 0.3333,
+        "performance": {},
+        "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-06.html"
+      },
+      "feature_psi": {
+        "utilization": 0.6805,
+        "age": 0.6305,
+        "payment_ratio": 0.3663,
+        "pay_status_1": 0.3583,
+        "months_delayed": 0.2606,
+        "pay_status_2": 0.1593,
+        "pay_amt_1": 0.1064,
+        "bill_amt_1": 0.1026,
+        "limit_bal": 0.0943,
+        "pay_status_3": 0.0826,
+        "bill_amt_4": 0.0815,
+        "pay_amt_2": 0.0784,
+        "bill_amt_6": 0.0749,
+        "pay_status_4": 0.0699,
+        "bill_amt_5": 0.0685,
+        "pay_amt_4": 0.0676,
+        "bill_amt_3": 0.0615,
+        "bill_amt_2": 0.0544,
+        "pay_status_5": 0.0447,
+        "pay_amt_5": 0.0424,
+        "pay_status_6": 0.0418,
+        "pay_amt_3": 0.0395,
+        "pay_amt_6": 0.0342,
+        "education": 0.0129
+      },
+      "performance": {
+        "roc_auc": 0.6491559244359071,
+        "ks": 0.2350786328315735,
+        "f1": 0.5497412305922944,
+        "precision": 0.582216808769793,
+        "recall": 0.5206971677559913,
+        "brier": 0.26023373007774353,
+        "predicted_default_rate": 0.4105,
+        "actual_default_rate": 0.459,
+        "mean_score": 0.32338252663612366
+      },
+      "fairness": {
+        "sex": {
+          "approval_rate": {
+            "female": 0.6084,
+            "male": 0.5568
+          },
+          "disparate_impact": 0.9152,
+          "passes_four_fifths_rule": true
+        },
+        "age_band": {
+          "approval_rate": {
+            "18-25": 0.5468,
+            "26-40": 0.6153,
+            "41-60": 0.5405
+          },
+          "disparate_impact": 0.8786,
+          "passes_four_fifths_rule": true
+        }
+      },
+      "alerts": [
+        {
+          "batch_id": "2025-06",
+          "alert": "DatasetDrift",
+          "severity": "critical",
+          "subject": "dataset",
+          "value": 0.3333,
+          "threshold": 0.15,
+          "message": "8 features drifted (33%): utilization, age, payment_ratio, pay_status_1, months_delayed, pay_status_2, pay_amt_1, bill_amt_1"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "utilization",
+          "value": 0.6805,
+          "threshold": 0.1,
+          "message": "utilization: PSI=0.680, KS p=1.3e-160, mean 0.43 -> 0.73"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "age",
+          "value": 0.6305,
+          "threshold": 0.1,
+          "message": "age: PSI=0.630, KS p=1.7e-112, mean 35.12 -> 29.16"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "payment_ratio",
+          "value": 0.3663,
+          "threshold": 0.1,
+          "message": "payment_ratio: PSI=0.366, KS p=4.1e-61, mean 0.34 -> 0.25"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "pay_status_1",
+          "value": 0.3583,
+          "threshold": 0.1,
+          "message": "pay_status_1: PSI=0.358, KS p=6.8e-96, mean -0.02 -> 0.57"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "critical",
+          "subject": "months_delayed",
+          "value": 0.2606,
+          "threshold": 0.1,
+          "message": "months_delayed: PSI=0.261, KS p=3.5e-73, mean 0.83 -> 1.60"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "pay_status_2",
+          "value": 0.1593,
+          "threshold": 0.1,
+          "message": "pay_status_2: PSI=0.159, KS p=9.7e-32, mean -0.13 -> 0.26"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "pay_amt_1",
+          "value": 0.1064,
+          "threshold": 0.1,
+          "message": "pay_amt_1: PSI=0.106, KS p=5.8e-13, mean 5,845.91 -> 4,620.82"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "FeatureDrift",
+          "severity": "warning",
+          "subject": "bill_amt_1",
+          "value": 0.1026,
+          "threshold": 0.1,
+          "message": "bill_amt_1: PSI=0.103, KS p=6.8e-12, mean 51,202.71 -> 69,924.76"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "PredictionDrift",
+          "severity": "critical",
+          "subject": "score",
+          "value": 0.2745,
+          "threshold": 0.1,
+          "message": "score distribution shifted, PSI=0.275"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "ModelPerformanceDegraded",
+          "severity": "critical",
+          "subject": "roc_auc",
+          "value": 0.1278,
+          "threshold": 0.03,
+          "message": "AUC 0.649 vs baseline 0.777"
+        },
+        {
+          "batch_id": "2025-06",
+          "alert": "ConceptDriftSuspected",
+          "severity": "critical",
+          "subject": "calibration",
+          "value": 0.1356,
+          "threshold": 0.05,
+          "message": "observed default 45.9% vs expected 32.3%: P(default|x) changed"
+        }
+      ]
+    }
+  ]
+}

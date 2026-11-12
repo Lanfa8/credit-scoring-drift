@@ -1,0 +1,61 @@
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.6798170112e+10
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 6.47110656e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.7944472295e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 18.580000000000002
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 28.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP credit_pipeline_task_success 1 if the task succeeded
+# TYPE credit_pipeline_task_success gauge
+credit_pipeline_task_success{task="ingest"} 0.0
+# HELP credit_pipeline_task_duration_seconds Task wall time
+# TYPE credit_pipeline_task_duration_seconds gauge
+credit_pipeline_task_duration_seconds{task="ingest"} 0.25911770500033526
+# HELP credit_pipeline_rows Rows per stage
+# TYPE credit_pipeline_rows gauge
+credit_pipeline_rows{stage="received"} 2025.0
+credit_pipeline_rows{stage="accepted"} 0.0
+credit_pipeline_rows{stage="rejected"} 2025.0
+# HELP credit_contract_violations Contract violations by check
+# TYPE credit_contract_violations gauge
+credit_contract_violations{check="limit_bal:not_nullable"} 62.0
+credit_contract_violations{check="dataframe:no_duplicated_records"} 50.0
+credit_contract_violations{check="customer_key:field_uniqueness"} 50.0
+credit_contract_violations{check="pay_amt_1:in_range(0, 3000000)"} 26.0
+credit_contract_violations{check="age:in_range(18, 100)"} 25.0
+credit_contract_violations{check="education:isin([1, 2, 3, 4])"} 16.0
+credit_contract_violations{check="dataframe:unexpected_column:cpf"} 1.0
+# HELP credit_feature_psi PSI per feature
+# TYPE credit_feature_psi gauge
+# HELP credit_feature_ks_statistic KS statistic per feature
+# TYPE credit_feature_ks_statistic gauge
+# HELP credit_model_metric Model performance on labelled batch
+# TYPE credit_model_metric gauge
+# HELP credit_default_rate Default rates (predicted/actual/mean score)
+# TYPE credit_default_rate gauge
+# HELP credit_fairness_disparate_impact Approval rate ratio
+# TYPE credit_fairness_disparate_impact gauge
+# HELP credit_alerts Alerts raised for the batch
+# TYPE credit_alerts gauge
+credit_alerts{severity="warning"} 0.0
+credit_alerts{severity="critical"} 1.0
+# HELP credit_alert_active Alert raised
+# TYPE credit_alert_active gauge
+credit_alert_active{alert="IngestionBlocked",severity="critical",subject="data_contract"} 167.0
+# HELP credit_pipeline_batch_status 1 accepted, 0 blocked by contract
+# TYPE credit_pipeline_batch_status gauge
+credit_pipeline_batch_status 0.0
+# HELP credit_pipeline_last_run_timestamp_seconds Last processing time
+# TYPE credit_pipeline_last_run_timestamp_seconds gauge
+credit_pipeline_last_run_timestamp_seconds 1.794447245641972e+09

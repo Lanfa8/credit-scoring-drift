@@ -1,0 +1,149 @@
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.6789183488e+10
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 6.47430144e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.7944472295e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 30.28
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 28.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP credit_pipeline_task_success 1 if the task succeeded
+# TYPE credit_pipeline_task_success gauge
+credit_pipeline_task_success{task="ingest"} 1.0
+credit_pipeline_task_success{task="score"} 1.0
+credit_pipeline_task_success{task="drift"} 1.0
+credit_pipeline_task_success{task="evaluate"} 1.0
+# HELP credit_pipeline_task_duration_seconds Task wall time
+# TYPE credit_pipeline_task_duration_seconds gauge
+credit_pipeline_task_duration_seconds{task="ingest"} 0.04464511700007279
+credit_pipeline_task_duration_seconds{task="score"} 0.048627519000092434
+credit_pipeline_task_duration_seconds{task="drift"} 3.292022554000141
+credit_pipeline_task_duration_seconds{task="evaluate"} 0.022703249999722175
+# HELP credit_pipeline_rows Rows per stage
+# TYPE credit_pipeline_rows gauge
+credit_pipeline_rows{stage="received"} 2000.0
+credit_pipeline_rows{stage="accepted"} 2000.0
+credit_pipeline_rows{stage="rejected"} 0.0
+# HELP credit_contract_violations Contract violations by check
+# TYPE credit_contract_violations gauge
+# HELP credit_feature_psi PSI per feature
+# TYPE credit_feature_psi gauge
+credit_feature_psi{feature="utilization"} 0.5297
+credit_feature_psi{feature="age"} 0.3761
+credit_feature_psi{feature="payment_ratio"} 0.2226
+credit_feature_psi{feature="pay_status_1"} 0.1782
+credit_feature_psi{feature="months_delayed"} 0.1329
+credit_feature_psi{feature="pay_amt_2"} 0.1197
+credit_feature_psi{feature="pay_amt_1"} 0.0996
+credit_feature_psi{feature="pay_status_2"} 0.0968
+credit_feature_psi{feature="bill_amt_1"} 0.0728
+credit_feature_psi{feature="bill_amt_5"} 0.0664
+credit_feature_psi{feature="bill_amt_6"} 0.0596
+credit_feature_psi{feature="bill_amt_4"} 0.0549
+credit_feature_psi{feature="limit_bal"} 0.0542
+credit_feature_psi{feature="bill_amt_2"} 0.0534
+credit_feature_psi{feature="bill_amt_3"} 0.0511
+credit_feature_psi{feature="pay_status_4"} 0.0506
+credit_feature_psi{feature="pay_status_3"} 0.047
+credit_feature_psi{feature="pay_amt_4"} 0.0459
+credit_feature_psi{feature="pay_amt_5"} 0.0387
+credit_feature_psi{feature="pay_status_5"} 0.0367
+credit_feature_psi{feature="pay_status_6"} 0.0348
+credit_feature_psi{feature="pay_amt_6"} 0.0317
+credit_feature_psi{feature="pay_amt_3"} 0.031
+credit_feature_psi{feature="education"} 0.0139
+# HELP credit_feature_ks_statistic KS statistic per feature
+# TYPE credit_feature_ks_statistic gauge
+credit_feature_ks_statistic{feature="utilization"} 0.322
+credit_feature_ks_statistic{feature="age"} 0.2391
+credit_feature_ks_statistic{feature="payment_ratio"} 0.172
+credit_feature_ks_statistic{feature="pay_status_1"} 0.1902
+credit_feature_ks_statistic{feature="months_delayed"} 0.1736
+credit_feature_ks_statistic{feature="pay_amt_2"} 0.0659
+credit_feature_ks_statistic{feature="pay_amt_1"} 0.0827
+credit_feature_ks_statistic{feature="pay_status_2"} 0.1219
+credit_feature_ks_statistic{feature="bill_amt_1"} 0.0951
+credit_feature_ks_statistic{feature="bill_amt_5"} 0.1172
+credit_feature_ks_statistic{feature="bill_amt_6"} 0.1119
+credit_feature_ks_statistic{feature="bill_amt_4"} 0.1169
+credit_feature_ks_statistic{feature="limit_bal"} 0.1019
+credit_feature_ks_statistic{feature="bill_amt_2"} 0.1052
+credit_feature_ks_statistic{feature="bill_amt_3"} 0.1106
+credit_feature_ks_statistic{feature="pay_status_4"} 0.065
+credit_feature_ks_statistic{feature="pay_status_3"} 0.0745
+credit_feature_ks_statistic{feature="pay_amt_4"} 0.0442
+credit_feature_ks_statistic{feature="pay_amt_5"} 0.0404
+credit_feature_ks_statistic{feature="pay_status_5"} 0.0585
+credit_feature_ks_statistic{feature="pay_status_6"} 0.0547
+credit_feature_ks_statistic{feature="pay_amt_6"} 0.0506
+credit_feature_ks_statistic{feature="pay_amt_3"} 0.053
+credit_feature_ks_statistic{feature="education"} 0.0404
+# HELP credit_model_metric Model performance on labelled batch
+# TYPE credit_model_metric gauge
+credit_model_metric{metric="roc_auc"} 0.7078903606920152
+credit_model_metric{metric="ks"} 0.3113744258880615
+credit_model_metric{metric="f1"} 0.5475862068965517
+credit_model_metric{metric="precision"} 0.5491009681881052
+credit_model_metric{metric="recall"} 0.546079779917469
+credit_model_metric{metric="brier"} 0.2095378339290619
+# HELP credit_default_rate Default rates (predicted/actual/mean score)
+# TYPE credit_default_rate gauge
+credit_default_rate{kind="actual"} 0.3635
+credit_default_rate{kind="predicted"} 0.3615
+credit_default_rate{kind="mean_score"} 0.29743286967277527
+# HELP credit_fairness_disparate_impact Approval rate ratio
+# TYPE credit_fairness_disparate_impact gauge
+credit_fairness_disparate_impact{attribute="sex"} 0.9159
+credit_fairness_disparate_impact{attribute="age_band"} 0.8616
+# HELP credit_alerts Alerts raised for the batch
+# TYPE credit_alerts gauge
+credit_alerts{severity="warning"} 7.0
+credit_alerts{severity="critical"} 3.0
+# HELP credit_alert_active Alert raised
+# TYPE credit_alert_active gauge
+credit_alert_active{alert="DatasetDrift",severity="critical",subject="dataset"} 0.25
+credit_alert_active{alert="FeatureDrift",severity="critical",subject="utilization"} 0.5297
+credit_alert_active{alert="FeatureDrift",severity="critical",subject="age"} 0.3761
+credit_alert_active{alert="FeatureDrift",severity="warning",subject="payment_ratio"} 0.2226
+credit_alert_active{alert="FeatureDrift",severity="warning",subject="pay_status_1"} 0.1782
+credit_alert_active{alert="FeatureDrift",severity="warning",subject="months_delayed"} 0.1329
+credit_alert_active{alert="FeatureDrift",severity="warning",subject="pay_amt_2"} 0.1197
+credit_alert_active{alert="PredictionDrift",severity="warning",subject="score"} 0.1578
+credit_alert_active{alert="ModelPerformanceDegraded",severity="warning",subject="roc_auc"} 0.0691
+credit_alert_active{alert="ConceptDriftSuspected",severity="warning",subject="calibration"} 0.0661
+# HELP credit_pipeline_batch_status 1 accepted, 0 blocked by contract
+# TYPE credit_pipeline_batch_status gauge
+credit_pipeline_batch_status 1.0
+# HELP credit_inference_latency_seconds Scoring latency for the batch
+# TYPE credit_inference_latency_seconds gauge
+credit_inference_latency_seconds 0.0485455599996385
+# HELP credit_inference_rows_per_second Scoring throughput
+# TYPE credit_inference_rows_per_second gauge
+credit_inference_rows_per_second 41198.412378287394
+# HELP credit_drift_share Share of drifted features
+# TYPE credit_drift_share gauge
+credit_drift_share 0.25
+# HELP credit_drifted_features Number of drifted features
+# TYPE credit_drifted_features gauge
+credit_drifted_features 6.0
+# HELP credit_prediction_psi PSI of model scores
+# TYPE credit_prediction_psi gauge
+credit_prediction_psi 0.1578
+# HELP credit_target_psi PSI of observed default
+# TYPE credit_target_psi gauge
+credit_target_psi 0.0992
+# HELP credit_model_auc_drop Baseline AUC minus batch AUC
+# TYPE credit_model_auc_drop gauge
+credit_model_auc_drop 0.06906584892751111
+# HELP credit_pipeline_last_run_timestamp_seconds Last processing time
+# TYPE credit_pipeline_last_run_timestamp_seconds gauge
+credit_pipeline_last_run_timestamp_seconds 1.7944472559376283e+09

@@ -1,0 +1,281 @@
+{
+  "batch_id": "2025-04",
+  "drift_share": 0.1667,
+  "drifted_features": [
+    "utilization",
+    "age",
+    "payment_ratio",
+    "pay_status_1"
+  ],
+  "prediction_psi": 0.1191,
+  "target_psi": 0.0259,
+  "evidently_drift_share": 0.1667,
+  "performance": {},
+  "report": "/home/alan/university/credit-scoring-drift/reports/drift/2025-04.html",
+  "features": [
+    {
+      "feature": "utilization",
+      "psi": 0.3301,
+      "ks_statistic": 0.2469,
+      "ks_pvalue": 1.445054478759709e-74,
+      "ref_mean": 0.43,
+      "cur_mean": 0.57,
+      "psi_level": "significant",
+      "drift": true,
+      "evidently_psi": 0.3301
+    },
+    {
+      "feature": "age",
+      "psi": 0.1539,
+      "ks_statistic": 0.1564,
+      "ks_pvalue": 4.9747672394051816e-30,
+      "ref_mean": 35.12,
+      "cur_mean": 31.84,
+      "psi_level": "moderate",
+      "drift": true,
+      "evidently_psi": 0.1539
+    },
+    {
+      "feature": "payment_ratio",
+      "psi": 0.1291,
+      "ks_statistic": 0.1251,
+      "ks_pvalue": 2.3859302254258367e-19,
+      "ref_mean": 0.34,
+      "cur_mean": 0.32,
+      "psi_level": "moderate",
+      "drift": true,
+      "evidently_psi": 0.1291
+    },
+    {
+      "feature": "pay_status_1",
+      "psi": 0.1154,
+      "ks_statistic": 0.1517,
+      "ks_pvalue": 2.9764008122760864e-28,
+      "ref_mean": -0.02,
+      "cur_mean": 0.3,
+      "psi_level": "moderate",
+      "drift": true,
+      "evidently_psi": 0.1154
+    },
+    {
+      "feature": "months_delayed",
+      "psi": 0.0888,
+      "ks_statistic": 0.1351,
+      "ks_pvalue": 1.7866033473129546e-22,
+      "ref_mean": 0.83,
+      "cur_mean": 1.29,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0888
+    },
+    {
+      "feature": "pay_status_2",
+      "psi": 0.0619,
+      "ks_statistic": 0.0954,
+      "ks_pvalue": 1.9889656390128993e-11,
+      "ref_mean": -0.13,
+      "cur_mean": 0.1,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0619
+    },
+    {
+      "feature": "pay_amt_1",
+      "psi": 0.0609,
+      "ks_statistic": 0.0784,
+      "ks_pvalue": 7.542543442292654e-08,
+      "ref_mean": 5845.91,
+      "cur_mean": 5263.43,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0609
+    },
+    {
+      "feature": "pay_amt_2",
+      "psi": 0.0593,
+      "ks_statistic": 0.0601,
+      "ks_pvalue": 8.750626996985443e-05,
+      "ref_mean": 6339.38,
+      "cur_mean": 5494.68,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0593
+    },
+    {
+      "feature": "pay_status_4",
+      "psi": 0.0413,
+      "ks_statistic": 0.061,
+      "ks_pvalue": 6.265970129303835e-05,
+      "ref_mean": -0.24,
+      "cur_mean": -0.05,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0413
+    },
+    {
+      "feature": "pay_status_3",
+      "psi": 0.0403,
+      "ks_statistic": 0.061,
+      "ks_pvalue": 6.46149483350326e-05,
+      "ref_mean": -0.16,
+      "cur_mean": 0.02,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0403
+    },
+    {
+      "feature": "pay_amt_3",
+      "psi": 0.0395,
+      "ks_statistic": 0.054,
+      "ks_pvalue": 0.0005886781081328882,
+      "ref_mean": 5232.63,
+      "cur_mean": 5585.88,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0395
+    },
+    {
+      "feature": "bill_amt_1",
+      "psi": 0.0374,
+      "ks_statistic": 0.0643,
+      "ks_pvalue": 2.026116065703823e-05,
+      "ref_mean": 51202.71,
+      "cur_mean": 61772.84,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0374
+    },
+    {
+      "feature": "pay_amt_5",
+      "psi": 0.0361,
+      "ks_statistic": 0.0569,
+      "ks_pvalue": 0.000242163927091365,
+      "ref_mean": 4839.28,
+      "cur_mean": 4904.13,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0361
+    },
+    {
+      "feature": "pay_amt_6",
+      "psi": 0.031,
+      "ks_statistic": 0.0384,
+      "ks_pvalue": 0.03301515636987964,
+      "ref_mean": 5364.13,
+      "cur_mean": 5407.06,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.031
+    },
+    {
+      "feature": "pay_status_5",
+      "psi": 0.028,
+      "ks_statistic": 0.0473,
+      "ks_pvalue": 0.003944754933643775,
+      "ref_mean": -0.27,
+      "cur_mean": -0.1,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.028
+    },
+    {
+      "feature": "pay_amt_4",
+      "psi": 0.0269,
+      "ks_statistic": 0.0418,
+      "ks_pvalue": 0.015378398149656533,
+      "ref_mean": 5022.85,
+      "cur_mean": 5021.31,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0269
+    },
+    {
+      "feature": "bill_amt_6",
+      "psi": 0.0243,
+      "ks_statistic": 0.0836,
+      "ks_pvalue": 7.152342010135295e-09,
+      "ref_mean": 39457.21,
+      "cur_mean": 47363.27,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0243
+    },
+    {
+      "feature": "limit_bal",
+      "psi": 0.0235,
+      "ks_statistic": 0.0648,
+      "ks_pvalue": 1.6966007678841825e-05,
+      "ref_mean": 166642.94,
+      "cur_mean": 149995.0,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0235
+    },
+    {
+      "feature": "pay_status_6",
+      "psi": 0.0226,
+      "ks_statistic": 0.0425,
+      "ks_pvalue": 0.013006213611418368,
+      "ref_mean": -0.3,
+      "cur_mean": -0.16,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0226
+    },
+    {
+      "feature": "bill_amt_2",
+      "psi": 0.0199,
+      "ks_statistic": 0.0557,
+      "ks_pvalue": 0.00035935210703796227,
+      "ref_mean": 49251.08,
+      "cur_mean": 58638.65,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0199
+    },
+    {
+      "feature": "bill_amt_4",
+      "psi": 0.0192,
+      "ks_statistic": 0.0731,
+      "ks_pvalue": 7.040718944076154e-07,
+      "ref_mean": 43766.14,
+      "cur_mean": 52332.22,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0192
+    },
+    {
+      "feature": "bill_amt_5",
+      "psi": 0.0186,
+      "ks_statistic": 0.0781,
+      "ks_pvalue": 8.526716236260762e-08,
+      "ref_mean": 40669.71,
+      "cur_mean": 48733.23,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0186
+    },
+    {
+      "feature": "bill_amt_3",
+      "psi": 0.0179,
+      "ks_statistic": 0.0616,
+      "ks_pvalue": 5.146901091467372e-05,
+      "ref_mean": 47341.87,
+      "cur_mean": 55826.22,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0179
+    },
+    {
+      "feature": "education",
+      "psi": 0.0066,
+      "ks_statistic": 0.0279,
+      "ks_pvalue": 0.22742144244900298,
+      "ref_mean": 1.84,
+      "cur_mean": 1.8,
+      "psi_level": "stable",
+      "drift": false,
+      "evidently_psi": 0.0066
+    }
+  ]
+}

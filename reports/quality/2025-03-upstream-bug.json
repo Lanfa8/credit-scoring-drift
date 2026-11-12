@@ -1,0 +1,17 @@
+{
+  "batch_id": "2025-03-upstream-bug",
+  "validated_at": "2026-11-12T01:34:05+00:00",
+  "contract": "credit_application_contract",
+  "passed": false,
+  "rows": 2025,
+  "invalid_rows": 167,
+  "violations_by_check": {
+    "limit_bal:not_nullable": 62,
+    "dataframe:no_duplicated_records": 50,
+    "customer_key:field_uniqueness": 50,
+    "pay_amt_1:in_range(0, 3000000)": 26,
+    "age:in_range(18, 100)": 25,
+    "education:isin([1, 2, 3, 4])": 16,
+    "dataframe:unexpected_column:cpf": 1
+  }
+}

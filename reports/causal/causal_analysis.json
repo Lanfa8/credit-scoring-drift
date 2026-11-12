@@ -1,0 +1,150 @@
+{
+  "latest_batch": "2025-06",
+  "decomposition": [
+    {
+      "batch_id": "2025-01",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.219,
+      "covariate_effect": -0.0005,
+      "concept_effect": -0.0019,
+      "injected_concept_effect": 0.0
+    },
+    {
+      "batch_id": "2025-02",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.2185,
+      "covariate_effect": -0.0015,
+      "concept_effect": -0.0013,
+      "injected_concept_effect": 0.0
+    },
+    {
+      "batch_id": "2025-03",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.2575,
+      "covariate_effect": 0.0355,
+      "concept_effect": 0.0006,
+      "injected_concept_effect": 0.0
+    },
+    {
+      "batch_id": "2025-04",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.2915,
+      "covariate_effect": 0.0625,
+      "concept_effect": 0.0076,
+      "injected_concept_effect": 0.0245
+    },
+    {
+      "batch_id": "2025-05",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.3635,
+      "covariate_effect": 0.0749,
+      "concept_effect": 0.0672,
+      "injected_concept_effect": 0.076
+    },
+    {
+      "batch_id": "2025-06",
+      "reference_rate": 0.2214,
+      "observed_rate": 0.459,
+      "covariate_effect": 0.1008,
+      "concept_effect": 0.1368,
+      "injected_concept_effect": 0.1325
+    }
+  ],
+  "interventions": [
+    {
+      "intervention": "do(pay_status (delinquency) = reference)",
+      "mean_score": 0.2272000014781952,
+      "score_change": -0.09610000252723694,
+      "share_of_shift_removed": 0.9532999992370605
+    },
+    {
+      "intervention": "do(pay_amt (payment squeeze) = reference)",
+      "mean_score": 0.31610000133514404,
+      "score_change": -0.007300000172108412,
+      "share_of_shift_removed": 0.0722000002861023
+    },
+    {
+      "intervention": "do(age (new customer profile) = reference)",
+      "mean_score": 0.32339999079704285,
+      "score_change": 0.0,
+      "share_of_shift_removed": 0.0
+    },
+    {
+      "intervention": "do(limit_bal (frozen limits) = reference)",
+      "mean_score": 0.3301999866962433,
+      "score_change": 0.006800000090152025,
+      "share_of_shift_removed": -0.06780000030994415
+    },
+    {
+      "intervention": "do(bill_amt (inflation) = reference)",
+      "mean_score": 0.336899995803833,
+      "score_change": 0.013500000350177288,
+      "share_of_shift_removed": -0.1340000033378601
+    }
+  ],
+  "utilization_effect": [
+    {
+      "dataset": "reference",
+      "all_ate": 0.0038,
+      "all_ci_low": -0.0085,
+      "all_ci_high": 0.0207,
+      "on_time_ate": -0.0168,
+      "on_time_ci_low": -0.0291,
+      "on_time_ci_high": -0.0035
+    },
+    {
+      "dataset": "2025-01",
+      "all_ate": 0.0401,
+      "all_ci_low": -0.0013,
+      "all_ci_high": 0.0814,
+      "on_time_ate": 0.0154,
+      "on_time_ci_low": -0.0297,
+      "on_time_ci_high": 0.0601
+    },
+    {
+      "dataset": "2025-02",
+      "all_ate": 0.0255,
+      "all_ci_low": -0.0126,
+      "all_ci_high": 0.0598,
+      "on_time_ate": 0.0067,
+      "on_time_ci_low": -0.0349,
+      "on_time_ci_high": 0.0442
+    },
+    {
+      "dataset": "2025-03",
+      "all_ate": 0.0288,
+      "all_ci_low": -0.0087,
+      "all_ci_high": 0.066,
+      "on_time_ate": -0.0255,
+      "on_time_ci_low": -0.0599,
+      "on_time_ci_high": 0.0231
+    },
+    {
+      "dataset": "2025-04",
+      "all_ate": 0.0533,
+      "all_ci_low": 0.0106,
+      "all_ci_high": 0.0859,
+      "on_time_ate": 0.0405,
+      "on_time_ci_low": -0.0024,
+      "on_time_ci_high": 0.0774
+    },
+    {
+      "dataset": "2025-05",
+      "all_ate": 0.1785,
+      "all_ci_low": 0.1338,
+      "all_ci_high": 0.2307,
+      "on_time_ate": 0.221,
+      "on_time_ci_low": 0.1689,
+      "on_time_ci_high": 0.2697
+    },
+    {
+      "dataset": "2025-06",
+      "all_ate": 0.3109,
+      "all_ci_low": 0.2544,
+      "all_ci_high": 0.3826,
+      "on_time_ate": 0.466,
+      "on_time_ci_low": 0.4029,
+      "on_time_ci_high": 0.546
+    }
+  ]
+}
