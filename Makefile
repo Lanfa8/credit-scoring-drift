@@ -45,3 +45,7 @@ dashboard:
 	$(PY) -m credit_scoring_drift.dashboard
 
 monitor: pipeline dashboard
+
+.PHONY: causal
+causal:
+	$(PY) -m credit_scoring_drift.causal
