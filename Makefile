@@ -10,3 +10,7 @@ lint:
 
 test:
 	uv run pytest -q
+
+.PHONY: data
+data:
+	$(PY) -m credit_scoring_drift.data
