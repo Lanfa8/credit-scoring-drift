@@ -39,3 +39,9 @@ down:
 
 mlflow-ui:
 	uv run mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5000
+
+.PHONY: dashboard monitor
+dashboard:
+	$(PY) -m credit_scoring_drift.dashboard
+
+monitor: pipeline dashboard
