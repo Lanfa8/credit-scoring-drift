@@ -14,3 +14,10 @@ test:
 .PHONY: data
 data:
 	$(PY) -m credit_scoring_drift.data
+
+.PHONY: validate train
+validate:
+	$(PY) -m credit_scoring_drift.ingest $(BATCH)
+
+train:
+	$(PY) -m credit_scoring_drift.train
