@@ -49,3 +49,9 @@ monitor: pipeline dashboard
 .PHONY: causal
 causal:
 	$(PY) -m credit_scoring_drift.causal
+
+.PHONY: all clean-runs
+all: data train simulate monitor causal
+
+clean-runs:
+	rm -rf mlflow.db mlruns mlartifacts logs data/processed data/batches data/quarantine models reports
