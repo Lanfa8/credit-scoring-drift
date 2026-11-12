@@ -25,3 +25,7 @@ train:
 .PHONY: simulate
 simulate:
 	$(PY) -m credit_scoring_drift.simulate
+
+.PHONY: pipeline
+pipeline:
+	$(PY) -m credit_scoring_drift.pipeline
