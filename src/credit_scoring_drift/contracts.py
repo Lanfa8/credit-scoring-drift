@@ -62,9 +62,16 @@ class ValidationResult:
     def summary_by_check(self) -> dict[str, int]:
         if self.failure_cases.empty:
             return {}
-        fc = self.failure_cases.fillna({"column": "<dataframe>"})
-        keys = fc["column"].astype(str) + ":" + fc["check"].astype(str)
-        return keys.value_counts().to_dict()
+        fc = self.failure_cases.copy()
+        frame_level = fc["schema_context"] == "DataFrameSchema"
+        fc["key"] = fc["column"].astype(str) + ":" + fc["check"].astype(str)
+        fc.loc[frame_level, "key"] = "dataframe:" + fc.loc[frame_level, "check"].astype(str)
+        fc.loc[frame_level & (fc["check"] == "column_in_schema"), "key"] = (
+            "dataframe:unexpected_column:" + fc["failure_case"].astype(str)
+        )
+        fc["row"] = fc["index"].fillna(fc["key"])
+        counts = fc.drop_duplicates(["key", "row"]).groupby("key").size()
+        return counts.sort_values(ascending=False).to_dict()
 
 
 def validate(df: pd.DataFrame) -> ValidationResult:
