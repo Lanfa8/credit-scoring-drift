@@ -1,9 +1,14 @@
 from dataclasses import asdict, dataclass
 
-from credit_scoring_drift.drift import PSI_SEVERE, PSI_THRESHOLD, DriftResult
+from credit_scoring_drift.drift import (
+    DATASET_DRIFT_SHARE,
+    PSI_SEVERE,
+    PSI_THRESHOLD,
+    DriftResult,
+)
 
 DATASET_DRIFT_WARNING = 0.15
-DATASET_DRIFT_CRITICAL = 0.25
+DATASET_DRIFT_CRITICAL = DATASET_DRIFT_SHARE
 AUC_DROP_WARNING = 0.03
 AUC_DROP_CRITICAL = 0.07
 CALIBRATION_GAP_WARNING = 0.05

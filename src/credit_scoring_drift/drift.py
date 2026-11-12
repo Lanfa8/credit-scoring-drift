@@ -19,6 +19,7 @@ log = logging.getLogger(__name__)
 DRIFT_DIR = config.REPORTS_DIR / "drift"
 PSI_THRESHOLD = 0.1
 PSI_SEVERE = 0.25
+DATASET_DRIFT_SHARE = 0.25
 KS_ALPHA = 0.01
 CATEGORICAL = ["education", *config.PAY_STATUS]
 NUMERICAL = [c for c in config.MONITORED_FEATURES if c not in CATEGORICAL]
@@ -119,7 +120,11 @@ def _evidently_report(reference: pd.DataFrame, current: pd.DataFrame, has_target
         if has_target
         else None,
     )
-    metrics = [DataDriftPreset(method="quantile_psi", threshold=PSI_THRESHOLD)]
+    metrics = [
+        DataDriftPreset(
+            method="quantile_psi", threshold=PSI_THRESHOLD, drift_share=DATASET_DRIFT_SHARE
+        )
+    ]
     if has_target:
         metrics.append(ClassificationPreset())
     cols = [*config.MONITORED_FEATURES, "score", *([config.TARGET] if has_target else [])]
