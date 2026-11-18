@@ -5,8 +5,6 @@ credit scoring em produção: contratos de dados, simulação e detecção de *d
 *concept drift*, observabilidade do pipeline e governança sob a LGPD, incluindo análise causal
 da degradação.
 
-> **Vídeo (STAR, 5 min):** _link a adicionar_
-
 ## Sumário
 
 - [Contexto e resultado em uma frase](#contexto-e-resultado-em-uma-frase)
